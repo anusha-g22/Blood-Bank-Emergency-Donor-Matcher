@@ -1,0 +1,41 @@
+Problem Statement #12 –
+ Healthcare & Telemedicine
+Blood Bank Inventory & Emergency Donor Matcher
+
+
+Name: Anusha G
+SRN: PES2UG24CS075
+SECTION: B
+
+
+Actors:
+1.	Emergency Requester 
+2.	Blood Bank Manager
+Functional Requirements Table
+ID
+	Type	Description	Priority	Acceptance Criteria	Rationale	Comments
+FR-001	Functional	The system shall allow an Emergency Requester to submit an emergency blood request specifying blood group, required units, emergency location, and urgency.	High	Pass if a valid emergency request is successfully recorded with all required details.	
+The system needs accurate emergency request information to process the blood requirement.	Ensure all mandatory request fields are validated.
+FR-002	Functional	The system shall check the current blood bank inventory for compatible blood units matching an emergency request.	High	Pass if the system displays the available compatible blood units and quantities for a valid request.	The system must determine whether the required blood is already available.	Inventory quantity should be updated after allocation.
+
+FR-003	Functional	The system shall identify eligible donors with compatible blood groups within a 10 km radius when sufficient blood is unavailable.	High	Pass if only eligible donors with compatible blood groups within 10 km are selected.	Nearby compatible donors can help meet critical blood shortages quickly.	Donor eligibility and location must be verified.
+
+FR-004	Functional	The system shall send emergency SMS notifications to compatible eligible donors identified by the donor matching process.	High	Pass if compatible donors receive the emergency notification within 30 seconds of the emergency flag.	Rapid notification is necessary during emergency blood shortages.	Notification delivery status should be recorded
+FR-005	Functional	The system shall allow the Blood Bank Manager to add, update, allocate, and remove blood units while tracking their expiry dates.	High	Pass if inventory changes are accurately recorded and expired blood units cannot be allocated.	Accurate inventory management prevents incorrect allocation and use of expired blood.	Expiry date must be checked before allocation.
+
+
+
+Non-Functional Requirements
+ID
+	Type	Description	Priority	Acceptance Criteria	Rationale	Comments:
+NFR-001	Non
+functional	The inventory ledger shall maintain transactional consistency and prevent simultaneous allocation of the same blood unit.	High	Pass if concurrent allocation tests confirm that one blood unit cannot be allocated to multiple requests.	Double allocation can cause incorrect inventory records and serious operational errors.	Test using 
+simultaneous 
+allocation requests.
+
+NFR-00	Non 
+functional	The system shall process emergency donor matching and notification requests within 30 seconds under normal operating conditions.	High	Pass if at least 95% of simulated emergency requests result in donor notifications within 30 seconds.	Emergency situations require rapid identification and notification of donors.
+	Performance 
+should be tested 
+under simulated emergency load.
+
